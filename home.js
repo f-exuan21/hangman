@@ -65,17 +65,19 @@ var game = {
     },
 
     failGame : function() {
+        alert("FAIL!");
         blanksDivs = document.getElementsByClassName("blanks_cards");
 
         for(var i = 0; i < word.length; i++) {
             blanksDivs[i].innerText = word.charAt(i).toUpperCase();
         }
 
-        blanks.makeDisabledAllCards();
+        blanks.reverseAllCards(true);
     },
 
     successGame : function() {
-        blanks.makeDisabledAllCards();
+        alert("SUCCESS!");
+        blanks.reverseAllCards(true);
     }
 
 }
@@ -236,7 +238,7 @@ var blanks = {
 
     init : function() {
         
-        this.makeEnabledAllCards();
+        this.reverseAllCards(false);
         counts = 0;
         correctCounts = 0;
 
@@ -297,34 +299,21 @@ var blanks = {
                     break;
                 case 8:
                     hangman.setFeet();
-                    break;
-                default:
-                    alert("FAIL!");
-                    game.failGame();
+                    game.failGame();                  
             }
         }else {
             if(correctCounts == word.length) {
-                alert("SUCCESS!");
+                game.successGame();
             }
         }
 
     },
 
-    makeDisabledAllCards : function() {
-
+    reverseAllCards : function(isBack) {
         blanksDivs = document.getElementsByClassName("cards");
         
         for(var i = 0; i < blanksDivs.length; i++) {
-            blanksDivs[i].disabled = true;
-        }
-
-    },
-
-    makeEnabledAllCards : function() {
-        blanksDivs = document.getElementsByClassName("cards");
-        
-        for(var i = 0; i < blanksDivs.length; i++) {
-            blanksDivs[i].disabled = false;
+            blanksDivs[i].disabled = isBack;
         }
     }
 
