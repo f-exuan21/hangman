@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="home.js"></script>
+    <style>
+        body {
+            text-align: center;
+        }
+        .background {
+            border: 3px solid brown;
+        }
+        .cards {
+            width: 80px;
+            margin: 10px;
+            font-size: 50px;
+            border: 0;
+            background-color:lightcoral;
+            color: white;
+        }
+        .cards:hover {
+            background-color:brown;
+        }
+        .cards:disabled,
+        .cards[disabled]{
+            background-color: #cccccc;
+            color: #666666;
+        }
+        .start_btn {
+            padding: 10px;
+            margin: 30px auto;
+            background-color: burlywood;
+            font-size: 50px;
+            color: white;
+            border: 0px;
+        }
+        .start_btn:hover {
+            background-color: darkgoldenrod;
+        }
+
+
+    </style>
+    <title>Document</title>
+</head>
+<body onload="startGame();">
+    <canvas id="canvas" class="background" width="500px" height="370px"></canvas>
+    <div id="blanks"></div>
+    <div id="cards">
+        <div>
+            <button class="cards" onclick="blanks.onClickCard(this)">A</button>
+            <button class="cards" onclick="blanks.onClickCard(this)">B</button>
+            <button class="cards" onclick="blanks.onClickCard(this)">C</button>
+            <button class="cards" onclick="blanks.onClickCard(this)">D</button>
+            <button class="cards" onclick="blanks.onClickCard(this)">E</button>
+        </div>
+        <div>
+            <button class="cards" onclick="blanks.onClickCard(this)">F</button>
+            <button class="cards" onclick="blanks.onClickCard(this)">G</button>
+            <button class="cards" onclick="blanks.onClickCard(this)">H</button>
+            <button class="cards" onclick="blanks.onClickCard(this)">I</button>
+            <button class="cards" onclick="blanks.onClickCard(this)">J</button>
+        </div>
+        <div>
+            <button class="cards" onclick="blanks.onClickCard(this)">K</button>
+            <button class="cards" onclick="blanks.onClickCard(this)">L</button>
+            <button class="cards" onclick="blanks.onClickCard(this)">M</button>
+            <button class="cards" onclick="blanks.onClickCard(this)">N</button>
+            <button class="cards" onclick="blanks.onClickCard(this)">O</button>
+        </div>
+        <div>
+            <button class="cards" onclick="blanks.onClickCard(this)">P</button>
+            <button class="cards" onclick="blanks.onClickCard(this)">Q</button>
+            <button class="cards" onclick="blanks.onClickCard(this)">R</button>
+            <button class="cards" onclick="blanks.onClickCard(this)">S</button>
+            <button class="cards" onclick="blanks.onClickCard(this)">T</button>
+        </div>
+        <div>
+            <button class="cards" onclick="blanks.onClickCard(this)">U</button>
+            <button class="cards" onclick="blanks.onClickCard(this)">V</button>
+            <button class="cards" onclick="blanks.onClickCard(this)">W</button>
+            <button class="cards" onclick="blanks.onClickCard(this)">X</button>
+            <button class="cards" onclick="blanks.onClickCard(this)">Y</button>
+            <button class="cards" onclick="blanks.onClickCard(this)">Z</button>
+        </div>
+    </div>
+    <div><button class="start_btn" onclick="startGame()">RESTART</button></div>
+</body>
+</html>
